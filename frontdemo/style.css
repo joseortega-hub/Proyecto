@@ -1,0 +1,45 @@
+/* inicio */
+
+
+.navegador{
+    height: calc(38px + 1.5rem*2);
+}
+
+.buscadorInicio{
+    height: 150px;
+    width: 100%;
+}
+
+.buscadorInicio form{
+    border-radius: 50px;
+}
+.btn-primary, .bg-primary{
+    background-color: #FF385C!important;
+    border-color: #FF385C;
+}
+
+.textoInicio{
+    font-size: 35px;
+}
+/*---Div imagenes
+*/
+.alt1{
+    height: 300px;
+
+}
+
+.alt2{
+    height: 500px;
+}
+@media (max-width: 767px) {
+    .buscadorInicio{
+        height: auto;
+        width: 100%;
+        background-color: #FF385C;
+    }
+    
+.buscadorInicio form{
+    border-radius: 0;
+}
+}
+
