@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //Relacion uno a muchos restaurante
+    public function restaurantes()
+    {
+        return $this->hasMany('App/Models/Restaurante');
+    }
 }
