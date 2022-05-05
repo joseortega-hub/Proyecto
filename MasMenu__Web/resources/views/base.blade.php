@@ -132,6 +132,7 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
     <script src="/js/labelHorario.js"></script>
+    <script src="/js/slider.js"></script>
     <script>
         // activar el menu de login
         $('.activeLogin, .overlayLogin, .cerrarLogin').click(function() {

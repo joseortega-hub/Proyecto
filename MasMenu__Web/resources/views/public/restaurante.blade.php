@@ -4,8 +4,74 @@
 
 @section('cuerpo')
     <div class="container mt-3 pb-5">
-        <div class="row m-0">
-            <div class="col-12 p-0 mb-3">
+        <div class="row m-0 ">
+
+            <!--Contenedor prueba -->
+            <div class="contSlider row m-0">
+                <div id="slideshow col-12 p-0 mb-3">
+                    <div id="slides">
+                        <div class="slide show " data-slide="1">
+                            <img src="/img/{{ $imagenes[0]->urlImg }}" alt="" class="w-100 h-100">
+                        </div>
+
+                        <div class="slide" data-slide="2">
+                            <img src="/img/{{ $imagenes[1]->urlImg }} alt="">
+                                                    </div>
+
+                                                    <div class="        slide" data-slide="3">
+                            <img src="/img/{{ $imagenes[2]->urlImg }}" alt="">
+                        </div>
+
+                        <div class="slide" data-slide="4">
+                            <img src="/img/{{ $imagenes[3]->urlImg }}" alt="">
+                        </div>
+
+                        <div class="slide" data-slide="5">
+                            <img src="/img/{{ $imagenes[4]->urlImg }}" alt="">
+                        </div>
+
+                        <div class="slide-btn next">
+                            <span>&raquo;</span>
+                        </div>
+
+                        <div class="slide-btn prev">
+                            <span>&laquo;</span>
+                        </div>
+                    </div>
+
+                    <div id="gallery">
+                        <div class="thumbnail" data-slide="1">
+                            <img src="/img/{{ $imagenes[0]->urlImg }}" alt="">
+                        </div>
+
+                        <div class="thumbnail" data-slide="2">
+                            <img src="/img/{{ $imagenes[1]->urlImg }}" alt="">
+                        </div>
+
+                        <div class="thumbnail" data-slide="3">
+                            <img src="/img/{{ $imagenes[2]->urlImg }}" alt="">
+                        </div>
+
+                        <div class="thumbnail" data-slide="4">
+                            <img src="/img/{{ $imagenes[3]->urlImg }}" alt="">
+                        </div>
+
+                        <div class="thumbnail" data-slide="5">
+                            <img src="/img/{{ $imagenes[4]->urlImg }}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+            <!--Contenedor imagenes-->
+            <div class="col-12 p-0 mb-3 contImg">
 
                 <h1>{{ $restaurante->nombre }}</h1>
                 <p>{{ $restaurante->ciudad }}, {{ $restaurante->region }}, {{ $restaurante->pais }}</p>
@@ -50,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn border-dark shadow btn-light mt-3 mt-md-0 botonVerTodos"><span
+                    <button class="btn border-dark shadow btn-light mt-3 mt-md-0 botonVerTodos" id="botonImg"><span
                             class="icon-list mr-2"></span>Todas
                         las fotos</button>
 
