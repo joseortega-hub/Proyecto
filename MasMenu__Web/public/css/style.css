@@ -1,0 +1,322 @@
+/* inicio */
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-color: #f4f7f8;
+}
+
+.shadowHover:hover {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25) !important;
+    cursor: pointer;
+}
+
+.enlace {
+    color: inherit;
+}
+
+.enlace:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.navegador {
+    height: calc(38px + 1.5rem*2);
+}
+
+.buscadorInicio {
+    height: 150px;
+    width: 100%;
+}
+
+.buscadorInicio form {
+    border-radius: 50px;
+}
+
+
+
+/* LOGIN*/
+
+
+.overlayLogin, .overlaySingup {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .4);
+    position: fixed;
+    display: none;
+    z-index: 1;
+    transition: .5s;
+}
+
+.overlayLogin.active, .overlaySingup.active {
+    display: block !important;
+    transition: .5s;
+}
+
+.loginDiv {
+    width: 660px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    z-index: 2;
+    transition: .5s;
+}
+
+.singupDiv {
+    width: 767px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    z-index: 2;
+    transition: .5s;
+}
+
+
+
+.loginDiv.active, .singupDiv.active {
+    right: 0 !important;
+    transition: .5s;
+}
+
+
+@media (max-width: 767px) {
+    .loginDiv, .singupDiv {
+        width: 100%;
+    }
+}
+
+/*
+.btn-primary, .bg-primary {
+    background-color: #FF385C !important;
+    border-color: #FF385C;
+}
+*/
+
+.textoInicio {
+    font-size: 35px;
+}
+
+/*---Div imagenes
+*/
+.alt1 {
+    height: 300px;
+
+}
+
+.alt2 {
+    height: 500px;
+}
+
+/*-----------
+Buscador
+-----------*/
+.divBusqueda {
+    border-radius: 20px;
+}
+
+.imagenBusqueda {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 200px;
+
+}
+
+.cuerpoBusqueda h1 {
+    font-family: Cormorant Garamond, sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 0;
+    line-height: 30px;
+    color: #000;
+}
+
+.cuerpoBusqueda h2 {
+    font-size: 15px;
+    margin-bottom: 0;
+    line-height: 30px;
+}
+
+.cuerpoBusqueda small {
+    margin-bottom: 0;
+    line-height: 30px;
+}
+
+
+.divMenu {
+    border-radius: 30px;
+    height: 50px;
+}
+
+
+.botonesMenu1 {
+    text-align: center;
+    color: #fff !important;
+    font-size: 16px;
+}
+
+
+.nombreMenuBuscador {
+    height: 100%;
+    width: calc(100% - 104px);
+}
+.nombreMenuBuscador2 {
+    height: 100%;
+    width: calc(100% - 104px);
+}
+.iconosMenuBuscador {
+    height: 100%;
+    width: 104px;
+    position: relative;
+    padding: 4px 0;
+}
+.iconosMenuBuscador2{
+    height: 100%;
+    width: 104px;
+    position: relative;
+    padding: 4px 0;
+}
+
+.iconosMenuBuscador a {
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    float: left;
+}
+.iconosMenuBuscador2 a {
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    float: left;
+}
+
+
+/*-----
+Restaurante
+--------*/
+.imagenPrincipal {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
+
+.nombreRestaurante {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    font-size: 40px;
+}
+
+@media (max-width: 767px) {
+    .buscadorInicio {
+        height: auto;
+        width: 100%;
+        background-color: #FF385C;
+    }
+
+    .buscadorInicio form {
+        border-radius: 0;
+    }
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: 0;
+}
+
+
+/* private*/
+
+
+.anadirRestaurante {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.anadirRestaurante span {
+    font-size: 50px;
+}
+
+
+.botonEliminarRestaurante {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    margin-top: -5px;
+    padding: 0;
+    text-align: center;
+}
+
+/*------------------
+Editar restaurante
+------------*/
+.imagenPrimera {
+    height: 360px;
+}
+
+.imagenSecundaria {
+    height: 180px;
+}
+
+.botonVerTodos {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 14px;
+}
+
+.botonHorarioDanger, .botonHorarioPrimary {
+    cursor: pointer;
+    transition: 1s;
+}
+
+.botonHorarioPrimary.active {
+    color: #007bff !important;
+    background-color: #007bff1c !important;
+    transition: 1s;
+
+}
+
+.botonHorarioDanger.active {
+    color: #dc3545 !important;
+    background-color: rgba(255, 0, 0, .05) !important;
+    transition: 1s;
+
+}
+
+.escondido {
+    display: none;
+}
+
+.escondido2 {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+    .botonVerTodos {
+
+        position: relative;
+        right: auto;
+        bottom: auto;
+        font-size: 14px;
+        width: 100% !important;
+        box-shadow: none !important;
+    }
+
+    .imagenPrimera {
+        height: 150px;
+    }
+
+    .imagenSecundaria {
+        height: 130px;
+    }
+}
