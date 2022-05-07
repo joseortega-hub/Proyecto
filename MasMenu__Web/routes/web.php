@@ -38,12 +38,10 @@ Rutas private
  *******************/
 
 // Restaurantes del usuario
-Route::get('/manager', function () {
-    return view('private/restaurantes');
-})->name('manager');
+Route::get('/manager', 'App\Http\Controllers\PrivateController@dashboard')->name('manager');
 
-// Editar restaurantes
+// Editar restaurante
+Route::get('/manager/restaurante/{id}', 'App\Http\Controllers\PrivateController@restaurante')->name('manager_restaurante');
 
-Route::get('/manager/restaurante', function () {
-    return view('private/editarRestaurante');
-})->name('manager-restaurante');
+// Crear resturante
+Route::post('/manager/restaurante/crear', 'App\Http\Controllers\PrivateController@crearRestaurante')->name('manager_crearRestaurante');

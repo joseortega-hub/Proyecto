@@ -8,53 +8,33 @@ use App\Models\Imagen;
 use App\Models\Menu;
 use App\Models\Horario;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use SebastianBergmann\Environment\Console;
 
-class HomeController extends Controller
+class PrivateController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    /*
+
     public function __construct()
     {
         $this->middleware('auth');
     }
-    */
+
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function dashboard(Request $request)
     {
-        $ciudad = "";
-        $nombre = "";
-
-        $info = [
-            'nombre' => $nombre,
-            'ciudad' => $ciudad,
-        ];
-
-        return view('public/home', $info);
-    }
-
-
-    public function busqueda(Request $request)
-    {
-        $ciudad = $request->get('ciudad');
-        $nombre = $request->get('nombre');
         $restaurantes = [];
 
-        if ($ciudad && $nombre)
-            $restaurantes =  Restaurante::orWhere('nombre', 'LIKE', "%$nombre%")->orWhere('ciudad', 'LIKE', "%$ciudad%")->get();
-        else if ($ciudad && !$nombre)
-            $restaurantes =  Restaurante::where('ciudad', 'LIKE', "%$ciudad%")->get();
-        else if (!$ciudad && $nombre)
-            $restaurantes =  Restaurante::where('nombre', 'LIKE', "%$nombre%")->get();
-
+        $restaurantes =  Restaurante::where('users_id', '=', Auth::user()->id)->get();
 
         $imagenes = [];
 
@@ -67,22 +47,16 @@ class HomeController extends Controller
 
         $info = [
             'restaurantes' =>  $restaurantes,
-            'ciudad' => $ciudad,
-            'nombre' => $nombre,
             'imagenes' => $imagenes,
         ];
 
-        return view('public/buscar', $info);
+        return view('private/restaurantes', $info);
     }
+
 
     public function restaurante(Request $request, $id)
     {
         $restaurante = Restaurante::find($id);
-
-        if (Auth::user()->id == $restaurante->users_id) {
-            return redirect('manager/restaurante/' . strval($restaurante->id));
-        }
-
         $menus = Menu::where('restaurante_id', '=', $id)->get();
         $horario = Horario::where('restaurante_id', '=', $id)->take(1)->get();
         $imagenes = Imagen::where('restaurante_id', '=', $id)->get();
@@ -94,6 +68,29 @@ class HomeController extends Controller
             'imagenes' => $imagenes,
         ];
 
-        return view('public/restaurante', $info);
+        return view('private/editarRestaurante', $info);
+    }
+
+    public function crearRestaurante(Request $request)
+    {
+        $newRestaurante = new Restaurante();
+
+        $newRestaurante->nombre =  $request->post('nombre');
+        $newRestaurante->ciudad =  $request->post('ciudad');
+        $newRestaurante->region =  $request->post('region');
+        $newRestaurante->pais =  $request->post('pais');
+        $newRestaurante->direccion =  $request->post('direccion');
+        $newRestaurante->telefono =  $request->post('telefono');
+        $newRestaurante->gmail =  $request->post('email');
+        $newRestaurante->users_id = Auth::user()->id;
+        $newRestaurante->save();
+
+        $newImagen = new Imagen();
+        $newImagen->restaurante_id = $newRestaurante->id;
+        $newImagen->urlImg = 'imagen.png';
+
+        $newImagen->save();
+
+        return redirect()->back();
     }
 }

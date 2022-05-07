@@ -16,12 +16,16 @@
 
             <div class="row m-0 ">
 
+                @if ($restaurantes)
+                    @foreach ($restaurantes as $restaurante)
+                        @include('public/restauranteBusqueda')
+                    @endforeach
+                @endif
 
-                @include('public/restauranteBusqueda')
 
                 <div class="col-md-4 p-3 ">
                     <div data-toggle="modal" data-target="#nuevoRestaurante"
-                        class="shadowHover shadow-sm border bg-white divBusqueda position-relative" style="height: 375px">
+                        class="shadowHover shadow-sm border bg-white divBusqueda position-relative" style="height: 296px">
                         <p class="text-center anadirRestaurante">
                             <span class="icon-plus"></span>
                             <br><br>
@@ -34,29 +38,41 @@
                     <div class="modal fade" id="nuevoRestaurante" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content p-md-5 p-4">
-                                <form action="">
+                                <form method="POST" action="{{ route('manager_crearRestaurante') }}">
+                                    @csrf
                                     <div class="row m-0">
                                         <div class="col-12 p-0 pl-md-0 pb-4 mb-4 border-bottom">
                                             <h2 class="m-0">Nuevo restaurante </h2>
                                         </div>
 
 
-                                        <div class="col-12 p-0">
-                                            <div class="alert alert-warning w-100 mb-3" role="alert">
-                                                Tu nuevo restaurante se creará con el pais, provincia
-                                                y ciudad por defecto que tienes asignados a tu usuario.
-                                                Además también se creará con ese mismo email.
-                                            </div>
-                                        </div>
                                         <div class="col-12  mb-3 p-0">
-                                            <input type="text" name="" id="" placeholder="Nombre restaurante "
+                                            <input type="text" name="nombre" id="" placeholder="Nombre restaurante "
                                                 class="form-control ">
                                         </div>
                                         <div class="col-12  mb-3 p-0">
-                                            <input type="text" name="" id="" placeholder="Telefono" class="form-control ">
+                                            <input type="text" name="telefono" id="" placeholder="Telefono"
+                                                class="form-control ">
                                         </div>
                                         <div class="col-12 mb-3 p-0">
-                                            <input type="text" name="" id="" placeholder="Dirección" class="form-control ">
+                                            <input type="text" name="email" id="" placeholder="email"
+                                                class="form-control ">
+                                        </div>
+                                        <div class="col-12  mb-3 p-0">
+                                            <input type="text" name="ciudad" id="" placeholder="Ciudad"
+                                                class="form-control ">
+                                        </div>
+                                        <div class="col-12  mb-3 p-0">
+                                            <input type="text" name="region" id="" placeholder="Region"
+                                                class="form-control ">
+                                        </div>
+                                        <div class="col-12 mb-3 p-0">
+                                            <input type="text" name="pais" id="" placeholder="Pais" class="form-control ">
+                                        </div>
+
+                                        <div class="col-12 mb-3 p-0">
+                                            <input type="text" name="direccion" id="" placeholder="Dirección"
+                                                class="form-control ">
                                         </div>
                                         <div class="col-12 p-0 text-right">
                                             <button type="submit" class="btn btn-primary btn-block">
