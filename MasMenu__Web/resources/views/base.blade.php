@@ -21,6 +21,21 @@
 
 <body class="mb-5">
 
+
+    <div class="overlayCookie" id="cookie1">
+        <div class="cookiesms shadow-lg">
+            <h5>Ley de Cookies Europea</h5>
+            <p class="mb-0">
+                Utilizamos Cookies propias y de terceros para elaborar información estadística
+                y mostrarle contenido personalizado a través del análisis de su navegación que
+                compartimos con nuestros partners. Si continuas navegando aceptas nuestros
+                terminos y condiciones
+            </p>
+            <div onclick="controlcookies()" class="btn btn-primary btn-sm float-right mt-3 shadowHover shadow-sm">Aceptar
+            </div>
+        </div>
+    </div>
+
     <!-- navegador sin responsive -->
 
 
@@ -39,8 +54,8 @@
                 <!-- elementos privados -->
                 <a type="button" href="{{ route('manager') }}" class="btn btn btn-primary rounded">Manager</a>
 
-                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="icon-user"></span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -59,63 +74,10 @@
                         @csrf
                     </form>
                 </div>
+
+                @include('private/perfil')
             @endif
 
-            <!-- Modal  editar Perfil-->
-            <div class="modal fade" id="editarPerfil" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content p-md-5 p-4">
-                        <form action="">
-                            <div class="row m-0">
-                                <div class="col-12 p-0 mt-md-5 pl-md-0 pb-4 mb-4 border-bottom">
-                                    <h2 class="m-0">Editar perfil </h2>
-                                </div>
-
-                                <div class="col-md-6 pr-md-2 p-0 mb-3">
-                                    <label for="nombre">Nombre de usuario</label>
-                                    <input type="text" name="nombre" id="" required class="form-control">
-                                </div>
-                                <div class="col-md-6 pl-md-2 p-0   mb-3">
-                                    <label for="nombre">Email</label>
-                                    <input type="email" name="" id="" required class="form-control">
-                                </div>
-                                <div class="col-md-6 pr-md-2 p-0 mb-3">
-                                    <label for="nombre">Telefono</label>
-                                    <input type="text" name="telefono" id="" required class="form-control">
-                                </div>
-                                <div class="col-md-6 pl-md-2 p-0   mb-3">
-                                    <label for="password2">Dirección</label>
-                                    <input type="text" name="provincia" id="" required class="form-control">
-                                </div>
-                                <div class="col-md-6 pl-md-2 p-0   mb-3">
-                                    <label for="nombre">Ciudad</label>
-                                    <input type="text" name="ciudad" id="" required class="form-control">
-                                </div>
-
-
-                                <div class="col-md-6 pr-md-2 p-0 mb-3">
-                                    <label for="password1">Pais</label>
-                                    <input type="text" name="pais" id="" required class="form-control">
-                                </div>
-                                <div class="col-md-6 pl-md-2 p-0   mb-3">
-                                    <label for="password2">Provincia</label>
-                                    <input type="text" name="provincia" id="" required class="form-control">
-                                </div>
-
-
-                                <div class="col-12 p-0 text-right mt-3 border-top pt-3">
-
-                                    <button type="submit" class="btn btn-primary">
-                                        Actualizar
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-            <!-- end Modal -->
 
 
         </div>
@@ -124,6 +86,8 @@
 
     @yield('cuerpo')
 
+    @include('footer')
+
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -131,31 +95,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="/js/labelHorario.js"></script>
+    <script src="/js/main.js"></script>
     <script src="/js/slider.js"></script>
-    <script>
-        // activar el menu de login
-        $('.activeLogin, .overlayLogin, .cerrarLogin').click(function() {
-            if ($('.loginDiv').hasClass('active')) {
-                $('.loginDiv, .overlayLogin').removeClass('active');
-                $('html').css('overflow-y', 'scroll');
-            } else {
-                $('.loginDiv, .overlayLogin').addClass('active');
-                $('html').css('overflow-y', 'hidden');
-            }
-        });
+    <script src="/js/validaciones.js"></script>
 
-        // activar el menu de registro
-        $('.activeSingup, .overlaySingup, .cerrarSingup').click(function() {
-            if ($('.singupDiv').hasClass('active')) {
-                $('.singupDiv, .overlaySingup').removeClass('active');
-                $('html').css('overflow-y', 'scroll');
-            } else {
-                $('.singupDiv, .overlaySingup').addClass('active');
-                $('html').css('overflow-y', 'hidden');
-            }
-        });
-    </script>
+
 </body>
 
 </html>

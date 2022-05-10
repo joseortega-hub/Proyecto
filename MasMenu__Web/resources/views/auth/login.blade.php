@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="col-md-12 p-0 mb-3">
-                        <input type="text" name="email" id="" placeholder="Email" class="form-control ">
+                        <input type="email" name="email" id="" placeholder="Email" class="form-control ">
                     </div>
                     <div class="col-md-12  p-0 mb-3">
                         <input type="password" name="password" id="" placeholder="Contraseña" class="form-control ">

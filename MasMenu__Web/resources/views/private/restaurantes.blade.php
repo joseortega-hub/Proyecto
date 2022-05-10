@@ -38,7 +38,8 @@
                     <div class="modal fade" id="nuevoRestaurante" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content p-md-5 p-4">
-                                <form method="POST" action="{{ route('manager_crearRestaurante') }}">
+                                <form method="POST" action="{{ route('manager_crearRestaurante') }}"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="row m-0">
                                         <div class="col-12 p-0 pl-md-0 pb-4 mb-4 border-bottom">
@@ -72,6 +73,11 @@
 
                                         <div class="col-12 mb-3 p-0">
                                             <input type="text" name="direccion" id="" placeholder="Dirección"
+                                                class="form-control ">
+                                        </div>
+                                        <div class="col-12 mb-3 p-0">
+                                            Imagen
+                                            <input type="file" name="imagen" id="" placeholder="Imagen" value=""
                                                 class="form-control ">
                                         </div>
                                         <div class="col-12 p-0 text-right">

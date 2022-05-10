@@ -5,9 +5,9 @@
 
     <div class="shadowHover shadow-sm border bg-white divBusqueda">
         <a href="{{ route('restaurante', $restaurante->id) }}" class="enlace">
-            
+
             <div class="imagenBusqueda w-100"
-                style="background:url('/img/{{ $imagenes[$loop->index] }}') no-repeat; background-size: cover; background-position: center !important;">
+                style="background:url('/img/restaurante/{{ $imagenes[$loop->index] }}') no-repeat; background-size: cover; background-position: center !important;">
             </div>
 
         </a>

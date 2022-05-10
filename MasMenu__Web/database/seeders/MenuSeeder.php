@@ -16,19 +16,16 @@ class MenuSeeder extends Seeder
      */
     public function run()
     {
-        $nombre1 = 'carta Fosters Hollywood';
-        $nombre2 = 'carta Burger king';
-        $nombre3 = 'carta Casa Paula';
 
 
-        $nombres = [$nombre1, $nombre2, $nombre3];
 
+        $nombres = ['Carta Fosters Hollywood', 'Carta Burger king', 'Carta Mc Donald', 'Carta Argentino', 'Carta Capichi', 'Carta TGB'];
         for ($i = 0; $i < count($nombres); $i++) {
 
             DB::table('menus')->insert(array(
                 'nombre' => $nombres[$i],
                 'urlQR' => 'codigoQr.png',
-                'urlArchivo' => 'archivo.pdf',
+                'urlArchivo' => 'foster.pdf',
                 'restaurante_id' => $i + 1
             ));
         }

@@ -27,15 +27,15 @@ class RestauranteSeeder extends Seeder
         $nombre3 = 'Casa Paula';
 
 
-        $nombres = [$nombre1, $nombre2, $nombre3];
-        $ciudades = ['Albatera', 'Elche', 'Callosa', 'Catral', 'Orihuela'];
-        $regiones = ['Alicante', 'Murcia', 'Andalucia', 'Galicia', 'Pais Vasco'];
-        $paises = ['España', 'Portugal', 'Italia', 'Francia'];
-        $direcciones = ['Calle Santa Lidia Nº13', 'Calle San Juan Nº31', 'Calle San Miguel Nº3'];
-        $telefonos = ['654328978', '722345987', '654312342'];
-        $gmails = ['jfortega@gmail.com', 'raulsiwen@gmail.com', 'benito@gmail.com'];
+        $nombres = ['Fosters Hollywood', 'Burger King', 'Mc Donald', 'Argentino', 'Capichi', 'TGB'];
+        $ciudades = ['Zenia', 'Albatera', 'Elche', 'Callosa', 'Catral', 'Orihuela'];
+        $regiones = ['Torrevieja', 'Alicante', 'Murcia', 'Andalucia', 'Galicia', 'Pais Vasco'];
+        $paises = ['España', 'España', 'España', 'Portugal', 'Italia', 'Francia'];
+        $direcciones = ['Calle San Gabriel Nº11', 'Calle Arcangel Nº98', 'Calle Benito Nº69', 'Calle Santa Lidia Nº13', 'Calle San Juan Nº31', 'Calle San Miguel Nº3'];
+        $telefonos = ['651411615', '789654321', '678954321', '654328978', '722345987', '654312342'];
+        $gmails = ['pablo@foster.com', 'maria@burger.com', 'mateas@mcdonald.com', 'jfortega@argentino.com', 'raulsiwen@gmail.com', 'benito@gmail.com',];
 
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 6; $i++) {
 
             DB::table('restaurantes')->insert(array(
                 'nombre' => $nombres[$i],

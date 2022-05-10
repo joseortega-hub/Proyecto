@@ -19,9 +19,15 @@ class ImagenSeeder extends Seeder
 
 
 
-        $img1 = ['restaurante1.jpg', 'restaurante1_2.jpg', 'restaurante1_3.jpg', 'restaurante1_4.jpg', 'restaurante1_5.jpg'];
-        $img2 = ['restaurante2.jpg', 'restaurante2_2.jpg', 'restaurante2_3.jpg', 'restaurante2_4.jpg', 'restaurante2_5.jpg'];
-        $img3 = ['restaurante3.jpg', 'restaurante3_2.jpg', 'restaurante3_3.jpg', 'restaurante3_4.jpg', 'restaurante3_5.jpg'];
+        $img1 = ['foster1.png', 'foster2.jpg', 'foster3.jpg', 'foster4.jpg', 'foster5.jpg'];
+        $img2 = ['burguer1.jpg', 'burguer2.png', 'burguer3.jpg', 'burguer4.jpg', 'burguer5.jpg'];
+        $img3 = ['mcdonald1.jpg', 'mcdonald2.jpg', 'mcdonald3.jpg', 'mcdonald4.jpg', 'mcdonald5.jpg'];
+        $img4 = ['argentino1.jpg', 'argentino2.jpg', 'argentino3.jpg', 'argentino4.jpg', 'argentino5.jpg'];
+        $img5 = ['capichi1.jpg', 'capichi2.jpg', 'capichi3.jpg', 'capichi4.jpg', 'capichi5.jpg'];
+        $img6 = ['tgb1.jpg', 'tgb2.jpg', 'tgb3.jpg', 'tgb4.jpg', 'tgb5.jpg'];
+
+
+
 
         for ($i = 0; $i < count($img1); $i++) {
             DB::table('imagenes')->insert(array(
@@ -30,7 +36,7 @@ class ImagenSeeder extends Seeder
             ));
         }
 
-        for ($i = 0; $i < count($img3); $i++) {
+        for ($i = 0; $i < count($img2); $i++) {
             DB::table('imagenes')->insert(array(
                 'urlImg' => $img2[$i],
                 'restaurante_id' => 2
@@ -40,6 +46,24 @@ class ImagenSeeder extends Seeder
             DB::table('imagenes')->insert(array(
                 'urlImg' => $img3[$i],
                 'restaurante_id' => 3
+            ));
+        }
+        for ($i = 0; $i < count($img4); $i++) {
+            DB::table('imagenes')->insert(array(
+                'urlImg' => $img4[$i],
+                'restaurante_id' => 4
+            ));
+        }
+        for ($i = 0; $i < count($img5); $i++) {
+            DB::table('imagenes')->insert(array(
+                'urlImg' => $img5[$i],
+                'restaurante_id' => 5
+            ));
+        }
+        for ($i = 0; $i < count($img6); $i++) {
+            DB::table('imagenes')->insert(array(
+                'urlImg' => $img6[$i],
+                'restaurante_id' => 6
             ));
         }
     }

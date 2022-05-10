@@ -1,245 +1,271 @@
 /*
+esto activa la función de arriba cuando detecta que el input
+ha sido modificado
+*/
+$("#id_imagen").change(function () {
+    readURL(this);
+});
+
+$('#id_imagen').click(function () {
+    $('.botonNuevaImagen, .alertaImagen').addClass('show');
+});
+
+$('#paso2, #paso2_2, #paso2_3').click(function () {
+    $('.paso1, .paso3, .paso4').removeClass('active');
+    $('.paso2').addClass('active');
+});
+
+$('#paso3, #paso3_2, #paso3_3').click(function () {
+    $('.paso1, .paso2, .paso4').removeClass('active');
+    $('.paso3').addClass('active');
+});
+
+$('#paso4, #paso4_2, #paso4_3').click(function () {
+    $('.paso1, .paso2, .paso3').removeClass('active');
+    $('.paso4').addClass('active');
+});
+
+
+
+
+
+/*
 lunes
 */
-if ($('#si_lunes').is(':checked')) {
-    $('.lunesCe').addClass('active');
-
+if ($('#no_lunes').is(':checked')) {
+    $('.lunes').addClass('active');
 } else {
-    $('.lunesAb').removeClass('active');
-    $('.lunesInputs').addClass('escondido')
+    $('.lunes').removeClass('active');
 }
 $('#si_lunes, #no_lunes').click(function () {
     if ($('#no_lunes').is(':checked')) {
-        $('.lunesAb').addClass('active');
-        $('.lunesCe').removeClass('active');
-        $('.lunesInputs').addClass('escondido')
-
+        $('.lunes').addClass('active');
     } else {
-        $('.lunesCe').addClass('active');
-        $('.lunesAb').removeClass('active');
-        $('.lunesInputs').removeClass('escondido')
+        $('.lunes').removeClass('active');
     }
 });
-
-$('#lunes_tarde').click(function () {
-    $('.inputTardeL').removeClass('escondido');
-    $('.lunesT').removeClass('active');
-    $('.lunesNt').addClass('active');
-});
-$('#lunes_no_tarde').click(function () {
-
-    $('.lunesNt').removeClass('active');
-    $('.lunesT').addClass('active');
-    $('.inputTardeL').addClass('escondido');
-});
-/*
-Martes
-*/
-if ($('#si_martes').is(':checked')) {
-    $('.martesCe').addClass('active');
-
+if ($('#no_turno_lunes').is(':checked')) {
+    $('.lunes').addClass('active2');
 } else {
-    $('.martesAb').removeClass('active');
-    $('.martesInputs').addClass('escondido')
+    $('.lunes').removeClass('active2');
+}
+$('#si_turno_lunes, #no_turno_lunes').click(function () {
+    if ($('#no_turno_lunes').is(':checked')) {
+        $('.lunes').removeClass('active2');
+    } else {
+        $('.lunes').addClass('active2');
+    }
+});
+if ($('#no_turno_lunes').is(':checked')) {
+    $('.lunes').removeClass('active2');
+} else {
+    $('.lunes').addClass('active2');
+}
+
+
+
+/*
+martes
+*/
+if ($('#no_martes').is(':checked')) {
+    $('.martes').addClass('active');
+} else {
+    $('.martes').removeClass('active');
 }
 $('#si_martes, #no_martes').click(function () {
     if ($('#no_martes').is(':checked')) {
-        $('.martesAb').addClass('active');
-        $('.martesCe').removeClass('active');
-        $('.martesInputs').addClass('escondido')
-
+        $('.martes').addClass('active');
     } else {
-        $('.martesCe').addClass('active');
-        $('.martesAb').removeClass('active');
-        $('.martesInputs').removeClass('escondido')
+        $('.martes').removeClass('active');
     }
 });
-
-$('#martes_tarde').click(function () {
-    $('.inputTardeM').removeClass('escondido');
-    $('.martesT').removeClass('active');
-    $('.martesNt').addClass('active');
+if ($('#no_turno_martes').is(':checked')) {
+    $('.martes').addClass('active2');
+} else {
+    $('.martes').removeClass('active2');
+}
+$('#si_turno_martes, #no_turno_martes').click(function () {
+    if ($('#no_turno_martes').is(':checked')) {
+        $('.martes').removeClass('active2');
+    } else {
+        $('.martes').addClass('active2');
+    }
 });
-$('#martes_no_tarde').click(function () {
-
-    $('.martesNt').removeClass('active');
-    $('.martesT').addClass('active');
-    $('.inputTardeM').addClass('escondido');
-});
+if ($('#no_turno_martes').is(':checked')) {
+    $('.martes').removeClass('active2');
+} else {
+    $('.martes').addClass('active2');
+}
 
 /*
-Miercoles
+miercoles
 */
-if ($('#si_miercoles').is(':checked')) {
-    $('.miercolesCe').addClass('active');
-
+if ($('#no_miercoles').is(':checked')) {
+    $('.miercoles').addClass('active');
 } else {
-    $('.miercolesAb').removeClass('active');
-    $('.miercolesInputs').addClass('escondido')
+    $('.miercoles').removeClass('active');
 }
 $('#si_miercoles, #no_miercoles').click(function () {
     if ($('#no_miercoles').is(':checked')) {
-        $('.miercolesAb').addClass('active');
-        $('.miercolesCe').removeClass('active');
-        $('.miercolesInputs').addClass('escondido')
-
+        $('.miercoles').addClass('active');
     } else {
-        $('.miercolesCe').addClass('active');
-        $('.miercolesAb').removeClass('active');
-        $('.miercolesInputs').removeClass('escondido')
+        $('.miercoles').removeClass('active');
     }
 });
-
-$('#miercoles_tarde').click(function () {
-    $('.inputTardeMi').removeClass('escondido');
-    $('.miercolesT').removeClass('active');
-    $('.miercolesNt').addClass('active');
-});
-$('#miercoles_no_tarde').click(function () {
-
-    $('.miercolesNt').removeClass('active');
-    $('.miercolesT').addClass('active');
-    $('.inputTardeMi').addClass('escondido');
-});
-/*
-Jueves
-*/
-if ($('#si_jueves').is(':checked')) {
-    $('.juevesCe').addClass('active');
-
+if ($('#no_turno_miercoles').is(':checked')) {
+    $('.miercoles').addClass('active2');
 } else {
-    $('.juevesAb').removeClass('active');
-    $('.juevesInputs').addClass('escondido')
+    $('.miercoles').removeClass('active2');
+}
+$('#si_turno_miercoles, #no_turno_miercoles').click(function () {
+    if ($('#no_turno_miercoles').is(':checked')) {
+        $('.miercoles').removeClass('active2');
+    } else {
+        $('.miercoles').addClass('active2');
+    }
+});
+if ($('#no_turno_miercoles').is(':checked')) {
+    $('.miercoles').removeClass('active2');
+} else {
+    $('.miercoles').addClass('active2');
+}
+
+
+/*
+jueves
+*/
+if ($('#no_jueves').is(':checked')) {
+    $('.jueves').addClass('active');
+} else {
+    $('.jueves').removeClass('active');
 }
 $('#si_jueves, #no_jueves').click(function () {
     if ($('#no_jueves').is(':checked')) {
-        $('.juevesAb').addClass('active');
-        $('.juevesCe').removeClass('active');
-        $('.juevesInputs').addClass('escondido')
-
+        $('.jueves').addClass('active');
     } else {
-        $('.juevesCe').addClass('active');
-        $('.juevesAb').removeClass('active');
-        $('.juevesInputs').removeClass('escondido')
+        $('.jueves').removeClass('active');
     }
 });
-
-$('#jueves_tarde').click(function () {
-    $('.inputTardeJ').removeClass('escondido');
-    $('.juevesT').removeClass('active');
-    $('.juevesNt').addClass('active');
-});
-$('#jueves_no_tarde').click(function () {
-
-    $('.juevesNt').removeClass('active');
-    $('.juevesT').addClass('active');
-    $('.inputTardeJ').addClass('escondido');
-});
-/*
-Viernes
-*/
-if ($('#si_viernes').is(':checked')) {
-    $('.viernesCe').addClass('active');
-
+if ($('#no_turno_jueves').is(':checked')) {
+    $('.jueves').addClass('active2');
 } else {
-    $('.viernesAb').removeClass('active');
-    $('.viernesInputs').addClass('escondido')
+    $('.jueves').removeClass('active2');
+}
+$('#si_turno_jueves, #no_turno_jueves').click(function () {
+    if ($('#no_turno_jueves').is(':checked')) {
+        $('.jueves').removeClass('active2');
+    } else {
+        $('.jueves').addClass('active2');
+    }
+});
+if ($('#no_turno_jueves').is(':checked')) {
+    $('.jueves').removeClass('active2');
+} else {
+    $('.jueves').addClass('active2');
+}
+
+
+
+
+/*
+viernes
+*/
+if ($('#no_viernes').is(':checked')) {
+    $('.viernes').addClass('active');
+} else {
+    $('.viernes').removeClass('active');
 }
 $('#si_viernes, #no_viernes').click(function () {
     if ($('#no_viernes').is(':checked')) {
-        $('.viernesAb').addClass('active');
-        $('.viernesCe').removeClass('active');
-        $('.viernesInputs').addClass('escondido')
-
+        $('.viernes').addClass('active');
     } else {
-        $('.viernesCe').addClass('active');
-        $('.viernesAb').removeClass('active');
-        $('.viernesInputs').removeClass('escondido')
+        $('.viernes').removeClass('active');
     }
 });
-
-$('#viernes_tarde').click(function () {
-    $('.inputTardeV').removeClass('escondido');
-    $('.viernesT').removeClass('active');
-    $('.viernesNt').addClass('active');
-});
-$('#viernes_no_tarde').click(function () {
-
-    $('.viernesNt').removeClass('active');
-    $('.viernesT').addClass('active');
-    $('.inputTardeV').addClass('escondido');
-});
-/*
-Sabado
-*/
-if ($('#si_sabado').is(':checked')) {
-    $('.sabadoCe').addClass('active');
-
+if ($('#no_turno_viernes').is(':checked')) {
+    $('.viernes').addClass('active2');
 } else {
-    $('.sabadoAb').removeClass('active');
-    $('.sabadoInputs').addClass('escondido')
+    $('.viernes').removeClass('active2');
+}
+$('#si_turno_viernes, #no_turno_viernes').click(function () {
+    if ($('#no_turno_viernes').is(':checked')) {
+        $('.viernes').removeClass('active2');
+    } else {
+        $('.viernes').addClass('active2');
+    }
+});
+if ($('#no_turno_viernes').is(':checked')) {
+    $('.viernes').removeClass('active2');
+} else {
+    $('.viernes').addClass('active2');
+}
+
+
+
+/*
+sabado
+*/
+if ($('#no_sabado').is(':checked')) {
+    $('.sabado').addClass('active');
+} else {
+    $('.sabado').removeClass('active');
 }
 $('#si_sabado, #no_sabado').click(function () {
     if ($('#no_sabado').is(':checked')) {
-        $('.sabadoAb').addClass('active');
-        $('.sabadoCe').removeClass('active');
-        $('.sabadoInputs').addClass('escondido')
-
+        $('.sabado').addClass('active');
     } else {
-        $('.sabadoCe').addClass('active');
-        $('.sabadoAb').removeClass('active');
-        $('.sabadoInputs').removeClass('escondido')
+        $('.sabado').removeClass('active');
     }
 });
-
-$('#sabado_tarde').click(function () {
-    $('.inputTardeS').removeClass('escondido');
-    $('.sabadoT').removeClass('active');
-    $('.sabadoNt').addClass('active');
-});
-$('#sabado_no_tarde').click(function () {
-
-    $('.sabadoNt').removeClass('active');
-    $('.sabadoT').addClass('active');
-    $('.inputTardeS').addClass('escondido');
-});
-/*
-Domingo
-*/
-if ($('#si_domingo').is(':checked')) {
-    $('.domingoCe').addClass('active');
-
+if ($('#no_turno_sabado').is(':checked')) {
+    $('.sabado').addClass('active2');
 } else {
-    $('.domingoAb').removeClass('active');
-    $('.domingoInputs').addClass('escondido')
+    $('.sabado').removeClass('active2');
+}
+$('#si_turno_sabado, #no_turno_sabado').click(function () {
+    if ($('#no_turno_sabado').is(':checked')) {
+        $('.sabado').removeClass('active2');
+    } else {
+        $('.sabado').addClass('active2');
+    }
+});
+if ($('#no_turno_sabado').is(':checked')) {
+    $('.sabado').removeClass('active2');
+} else {
+    $('.sabado').addClass('active2');
+}
+
+
+
+/*
+domingo
+*/
+if ($('#no_domingo').is(':checked')) {
+    $('.domingo').addClass('active');
+} else {
+    $('.domingo').removeClass('active');
 }
 $('#si_domingo, #no_domingo').click(function () {
     if ($('#no_domingo').is(':checked')) {
-        $('.domingoAb').addClass('active');
-        $('.domingoCe').removeClass('active');
-        $('.domingoInputs').addClass('escondido')
-
+        $('.domingo').addClass('active');
     } else {
-        $('.domingoCe').addClass('active');
-        $('.domingoAb').removeClass('active');
-        $('.domingoInputs').removeClass('escondido')
+        $('.domingo').removeClass('active');
     }
 });
-
-$('#domingo_tarde').click(function () {
-    $('.inputTardeD').removeClass('escondido');
-    $('.domingoT').removeClass('active');
-    $('.domingoNt').addClass('active');
+if ($('#no_turno_domingo').is(':checked')) {
+    $('.domingo').addClass('active2');
+} else {
+    $('.domingo').removeClass('active2');
+}
+$('#si_turno_domingo, #no_turno_domingo').click(function () {
+    if ($('#no_turno_domingo').is(':checked')) {
+        $('.domingo').removeClass('active2');
+    } else {
+        $('.domingo').addClass('active2');
+    }
 });
-$('#domingo_no_tarde').click(function () {
-
-    $('.domingoNt').removeClass('active');
-    $('.domingoT').addClass('active');
-    $('.inputTardeD').addClass('escondido');
-});
-
-
-
-
-
-
+if ($('#no_turno_domingo').is(':checked')) {
+    $('.domingo').removeClass('active2');
+} else {
+    $('.domingo').addClass('active2');
+}

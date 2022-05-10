@@ -16,12 +16,8 @@ class HomeController extends Controller
      *
      * @return void
      */
-    /*
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    */
+
+
 
     /**
      * Show the application dashboard.
@@ -32,10 +28,18 @@ class HomeController extends Controller
     {
         $ciudad = "";
         $nombre = "";
+        $restaurantes = Restaurante::all();
+        $imagenes = [];
+        foreach ($restaurantes as $restaurante) {
+            $aux = Imagen::where('restaurante_id', '=', $restaurante->id)->take(1)->get();
+            array_push($imagenes, $aux[0]->urlImg);
+        }
 
         $info = [
             'nombre' => $nombre,
             'ciudad' => $ciudad,
+            'restaurantes' => $restaurantes,
+            'imagenes' => $imagenes,
         ];
 
         return view('public/home', $info);
@@ -76,11 +80,15 @@ class HomeController extends Controller
     }
 
     public function restaurante(Request $request, $id)
+
     {
         $restaurante = Restaurante::find($id);
 
-        if (Auth::user()->id == $restaurante->users_id) {
-            return redirect('manager/restaurante/' . strval($restaurante->id));
+        if (!Auth::guest()) {
+
+            if (Auth::user()->id == $restaurante->users_id) {
+                return redirect('manager/restaurante/' . strval($restaurante->id));
+            }
         }
 
         $menus = Menu::where('restaurante_id', '=', $id)->get();

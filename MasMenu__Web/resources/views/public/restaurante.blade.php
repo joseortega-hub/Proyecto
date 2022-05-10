@@ -7,65 +7,65 @@
         <div class="row m-0 ">
 
             <!--Contenedor prueba
-                <div class="contSlider row m-0">
-                    <div id="slideshow col-12 p-0 mb-3">
-                        <div id="slides">
-                            <div class="slide show " data-slide="1">
-                                <img src="/img/{{ $imagenes[0]->urlImg }}" alt="" class="w-100 h-100">
-                            </div>
+                            <div class="contSlider row m-0">
+                                <div id="slideshow col-12 p-0 mb-3">
+                                    <div id="slides">
+                                        <div class="slide show " data-slide="1">
+                                            <img src="/img/{{ $imagenes[0]->urlImg }}" alt="" class="w-100 h-100">
+                                        </div>
 
-                            <div class="slide" data-slide="2">
-                                <img src="/img/{{ $imagenes[1]->urlImg }} alt="">
-                                                        </div>
+                                        <div class="slide" data-slide="2">
+                                            <img src="/img/{{ $imagenes[1]->urlImg }} alt="">
+                                                                    </div>
 
-                                                        <div class="        slide" data-slide="3">
-                                <img src="/img/{{ $imagenes[2]->urlImg }}" alt="">
-                            </div>
+                                                                    <div class="        slide" data-slide="3">
+                                            <img src="/img/{{ $imagenes[2]->urlImg }}" alt="">
+                                        </div>
 
-                            <div class="slide" data-slide="4">
-                                <img src="/img/{{ $imagenes[3]->urlImg }}" alt="">
-                            </div>
+                                        <div class="slide" data-slide="4">
+                                            <img src="/img/{{ $imagenes[3]->urlImg }}" alt="">
+                                        </div>
 
-                            <div class="slide" data-slide="5">
-                                <img src="/img/{{ $imagenes[4]->urlImg }}" alt="">
-                            </div>
+                                        <div class="slide" data-slide="5">
+                                            <img src="/img/{{ $imagenes[4]->urlImg }}" alt="">
+                                        </div>
 
-                            <div class="slide-btn next">
-                                <span>&raquo;</span>
-                            </div>
+                                        <div class="slide-btn next">
+                                            <span>&raquo;</span>
+                                        </div>
 
-                            <div class="slide-btn prev">
-                                <span>&laquo;</span>
-                            </div>
-                        </div>
+                                        <div class="slide-btn prev">
+                                            <span>&laquo;</span>
+                                        </div>
+                                    </div>
 
-                        <div id="gallery">
-                            <div class="thumbnail" data-slide="1">
-                                <img src="/img/{{ $imagenes[0]->urlImg }}" alt="">
-                            </div>
+                                    <div id="gallery">
+                                        <div class="thumbnail" data-slide="1">
+                                            <img src="/img/{{ $imagenes[0]->urlImg }}" alt="">
+                                        </div>
 
-                            <div class="thumbnail" data-slide="2">
-                                <img src="/img/{{ $imagenes[1]->urlImg }}" alt="">
-                            </div>
+                                        <div class="thumbnail" data-slide="2">
+                                            <img src="/img/{{ $imagenes[1]->urlImg }}" alt="">
+                                        </div>
 
-                            <div class="thumbnail" data-slide="3">
-                                <img src="/img/{{ $imagenes[2]->urlImg }}" alt="">
-                            </div>
+                                        <div class="thumbnail" data-slide="3">
+                                            <img src="/img/{{ $imagenes[2]->urlImg }}" alt="">
+                                        </div>
 
-                            <div class="thumbnail" data-slide="4">
-                                <img src="/img/{{ $imagenes[3]->urlImg }}" alt="">
-                            </div>
+                                        <div class="thumbnail" data-slide="4">
+                                            <img src="/img/{{ $imagenes[3]->urlImg }}" alt="">
+                                        </div>
 
-                            <div class="thumbnail" data-slide="5">
-                                <img src="/img/{{ $imagenes[4]->urlImg }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-
+                                        <div class="thumbnail" data-slide="5">
+                                            <img src="/img/{{ $imagenes[4]->urlImg }}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                </div> -->
+
+
+                            </div> -->
 
 
 
@@ -80,7 +80,7 @@
                     <div class="col-md-6 p-0 mb-2 mb-md-0">
                         <div class="col-12 p-0 pr-md-2 imagenPrimera">
                             <div class="w-100 h-100 rounded"
-                                style="background:url('/img/{{ $imagenes[0]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
+                                style="background:url('/img/restaurante/{{ $imagenes[0]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
                             </div>
                         </div>
                     </div>
@@ -88,14 +88,14 @@
                         <div class="col-12 p-0">
                             <div class="col-12 p-0 pb-1 imagenSecundaria">
                                 <div class="w-100 h-100 rounded"
-                                    style="background:url('/img/{{ $imagenes[1]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
+                                    style="background:url('/img/restaurante/{{ $imagenes[1]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 p-0">
                             <div class="col-12  p-0 pt-1  imagenSecundaria">
                                 <div class="w-100 h-100 rounded"
-                                    style="background:url('/img/{{ $imagenes[2]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
+                                    style="background:url('/img/restaurante/{{ $imagenes[2]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
                                 </div>
                             </div>
                         </div>
@@ -104,21 +104,22 @@
                         <div class="col-12 p-0">
                             <div class="col-12  p-0 pb-1  imagenSecundaria">
                                 <div class="w-100 h-100 rounded"
-                                    style="background:url('/img/{{ $imagenes[3]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
+                                    style="background:url('/img/restaurante/{{ $imagenes[3]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 p-0">
                             <div class="col-12  p-0 pt-1  imagenSecundaria">
                                 <div class="w-100 h-100 rounded"
-                                    style="background:url('/img/{{ $imagenes[4]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
+                                    style="background:url('/img/restaurante/{{ $imagenes[4]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="btn border-dark shadow btn-light mt-3 mt-md-0 botonVerTodos" id="botonImg"><span
-                            class="icon-list mr-2"></span>Todas
-                        las fotos</button>
+                    <button data-toggle="modal" data-target="#sliderModal"
+                        class="btn border-dark shadow btn-light mt-3 mt-md-0 botonVerTodos" id="botonImg">
+                        <span class="icon-list mr-2"></span>Todas las fotos</button>
+                    @include('public/slider');
 
                 </div>
             </div>
@@ -192,7 +193,7 @@
                 <div class="w-100  bg-white shadow-sm border p-3">
                     <h4 class="border-bottom pb-2 mb-2">Horario</h4>
                     <p class="mb-1 "> <small class="text-secondary">Lunes:</small>
-                        @if (!$horario->lunes_abierto)
+                        @if ($horario->lunes_abierto == 0)
                             <span class="text-danger">cerrado</span>
                         @else
                             @if ($horario->lunes_turnos)
