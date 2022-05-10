@@ -1,7 +1,7 @@
  <!-- Modal -->
  <div class="modal fade" id="newMenu" role="dialog" aria-hidden="true">
      <div class="modal-dialog sliderDiv" role="document">
-         <div class="modal-content p-5">
+         <div class="modal-content p-md-5 p-3">
              <form method="POST" action="{{ route('crear_menu', $restaurante->id) }}" enctype="multipart/form-data">
                  @csrf
                  <div class="row m-0">

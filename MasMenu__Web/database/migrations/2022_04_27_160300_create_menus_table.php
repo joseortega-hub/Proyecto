@@ -19,7 +19,6 @@ return new class extends Migration
             $table->unsignedBigInteger('restaurante_id');
             $table->foreign('restaurante_id')->references('id')->on('restaurantes');
             $table->string('nombre');
-            $table->string('urlQR');
             $table->string('urlArchivo');
         });
     }

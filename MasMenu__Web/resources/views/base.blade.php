@@ -95,13 +95,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
-    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="/js/labelHorario.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/slider.js"></script>
-    <script src="/js/validaciones.js"></script>
+    <script src="/js/qrcodejs/qrcode.js"></script>
 
-
+    @yield('js')
 </body>
 
 </html>

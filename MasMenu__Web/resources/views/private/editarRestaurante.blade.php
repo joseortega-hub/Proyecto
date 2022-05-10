@@ -1,12 +1,12 @@
 @extends('base')
 
-@section('titulo', $restaurante->nombre)
+@section('titulo', $restaurante->nombre . ' editor')
 
 @section('cuerpo')
 
     <div class="container mt-3 pb-5">
 
-        @include('public/slider');
+        @include('public/slider')
         <div class="row m-0">
             <div class="col-12 p-0 mb-3">
 
@@ -28,16 +28,9 @@
                     <!--Menus Disponibles-->
                     <div class="col-12  bg-white shadow-sm border p-3 mb-3">
                         <h4 class="border-bottom pb-2 mb-2">Menús disponibles</h4>
-                        @if (count($menus) > 0)
-                            <a target="_blank" href="{{ route('print', $restaurante->id) }}"
-                                class="shadow-sm shadowHover btn btn-primary btn-block">
-                                <span class="icon-file-pdf"></span>
-                                Generar PDF con menús disponibles
-                            </a>
-                        @endif
                         @foreach ($menus as $menu)
                             <div class="col-12 py-0 px-md-2 p-0 bg-light mt-3 shadowHover"
-                                style="border-radius: 50px; height: 58px ">
+                                style="border-radius: 50px; height: 58px " id="menu_{{ $menu->id }}">
                                 <!-- esto es una carta -->
                                 <a class="enlace" href="#">
                                     <div class="nombreMenuBuscador2  py-3 px-2 float-left">
@@ -45,7 +38,7 @@
                                     </div>
                                 </a>
                                 <div class="iconosMenuBuscador2 float-left">
-                                    <a href="{{ route('eliminar_menu', $menu->id) }}"
+                                    <a onclick="eliminarMenu({{ $menu->id }})"
                                         class="btn bg-danger text-center ml-1 text-light" style="padding: 12px 0">
                                         <span class="icon-bin2"></span>
                                     </a>
@@ -62,7 +55,7 @@
                                 <div class="modal fade" id="qrCode_{{ $menu->id }}" role="dialog"
                                     aria-hidden="true">
                                     <div class="modal-dialog" role="document">
-                                        <div class="modal-content p-5">
+                                        <div class="modal-content p-5" id="content_{{ $menu->id }}">
 
                                         </div>
                                     </div>
@@ -84,6 +77,11 @@
                     </div>
                     <!--Datos Disponibles-->
                     <div class="col-md-6 pr-md-2 p-0 mb-3">
+                        <a target="_blank" href="{{ route('print', $restaurante->id) }}"
+                            class="shadow-sm mb-3 shadowHover btn btn-primary btn-block">
+                            <span class="icon-file-pdf"></span>
+                            Generar PDF con datos
+                        </a>
                         <div class="p-3 w-100 bg-white shadow-sm border">
                             <h4 class="border-bottom pb-2 mb-2">Datos</h4>
                             <form method="POST" action="{{ route('editar_datos', $restaurante->id) }}"
@@ -96,7 +94,7 @@
                                 <input type="tel" class="form-control mb-2" name="telefono"
                                     value="{{ $restaurante->telefono }}">
                                 <small class="text-secondary">Correo electrónico</small>
-                                <input type="email" class="form-control mb-2" name="gmail"
+                                <input type="email" class="form-control mb-3" name="gmail"
                                     value="{{ $restaurante->gmail }}">
                                 <div class="w-100 text-right">
 
@@ -154,5 +152,35 @@
         </div>
     </div>
 
+
+
+@endsection
+
+
+@section('js')
+
+    <script type="text/javascript">
+        @foreach ($menus as $menu)
+            new QRCode(document.getElementById("content_" + {{ $menu->id }}),
+                "https://www.masmenu.com/PDF/{{ $menu->urlArchivo }}");
+        @endforeach
+    </script>
+
+
+    <script>
+        function eliminarMenu(id) {
+
+            const xhttp = new XMLHttpRequest();
+
+            // Define a callback function
+            xhttp.onload = function() {
+                document.getElementById('menu_' + id).remove();
+
+            }
+
+            xhttp.open("GET", '/manager/menu/' + id + '/eliminar');
+            xhttp.send();
+        }
+    </script>
 
 @endsection

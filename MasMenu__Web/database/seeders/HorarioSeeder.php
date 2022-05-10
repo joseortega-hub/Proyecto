@@ -17,7 +17,7 @@ class HorarioSeeder extends Seeder
     public function run()
     {
 
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 6; $i++) {
 
             DB::table('horarios')->insert(array(
                 'lunes_abierto' => true,

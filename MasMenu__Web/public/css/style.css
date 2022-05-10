@@ -23,7 +23,7 @@ body {
 
 
 .navegador {
-    height: calc(38px + 1.5rem*2);
+    height: calc(38px + 1rem*2);
 }
 
 .buscadorInicio {

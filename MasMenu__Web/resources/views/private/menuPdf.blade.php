@@ -34,6 +34,7 @@
 
         h3 {
             color: #747474;
+            margin: 0;
         }
 
     </style>
@@ -43,16 +44,20 @@
 
     <div class="container">
         <h1>{{ $info['restaurante']->nombre }}</h1>
-        <h2>Menús disponibles:</h2>
+        <h2>Datos del retaurante</h2>
         <ul>
-            @foreach ($info['menus'] as $menu)
-                <li>
-                    <h3>{{ $menu->nombre }}</h3>
-
-                    <img src="img/QR/indice.jpg" alt="">
-
-                </li>
-            @endforeach
+            <li>
+                <h3><small>Ciudad: </small>{{ $info['restaurante']->ciudad }}</h3>
+            </li>
+            <li>
+                <h3><small>Provincia: </small>{{ $info['restaurante']->region }}</h3>
+            </li>
+            <li>
+                <h3><small>Pais: </small>{{ $info['restaurante']->pais }}</h3>
+            </li>
+            <li>
+                <h3><small>Dirección: </small>{{ $info['restaurante']->direccion }}</h3>
+            </li>
         </ul>
     </div>
 

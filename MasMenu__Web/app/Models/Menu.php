@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre', 'urlQR', 'urlArchivos'];
+    protected $fillable = ['nombre', 'urlArchivos'];
 
 
     //Relacion uno a muchos(inversa)

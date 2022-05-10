@@ -209,7 +209,6 @@ class PrivateController extends Controller
         $file = $request->file('archivo');
         $menu->urlArchivo = $file->getClientOriginalName();
         $file->move(public_path('/PDF'), $file->getClientOriginalName());
-        $menu->urlQR = 'codigoQR.png';
         $menu->save();
 
         return redirect()->back();

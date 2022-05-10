@@ -24,7 +24,6 @@ class MenuSeeder extends Seeder
 
             DB::table('menus')->insert(array(
                 'nombre' => $nombres[$i],
-                'urlQR' => 'codigoQr.png',
                 'urlArchivo' => 'foster.pdf',
                 'restaurante_id' => $i + 1
             ));

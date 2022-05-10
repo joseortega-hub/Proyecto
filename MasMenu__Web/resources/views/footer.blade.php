@@ -1,4 +1,4 @@
-<div class="w-100">
+<div class="w-100 mt-4">
     <p class="text-center">
         © <span id="anyo"></span> - MasMenu
     </p>

@@ -1,17 +1,17 @@
 @extends('base')
 
-@section('titulo', 'Buscador de MasMenu')
+@section('titulo', 'Login de usuario')
 
 @section('cuerpo')
     <div class="row m-0 bg-white">
-        <div class="col-md-4 offset-4 p-md-5 p-3">
+        <div class="col-md-4 offset-md-4 p-md-5 p-3">
 
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="row m-0">
 
-                    <div class="col-12 p-0 mt-5 pl-md-0 pb-4 mb-4 border-bottom">
+                    <div class="col-12 p-0 mt-md-5 mt-3 pl-md-0 pb-4 mb-4 border-bottom">
                         <h2 class="m-0">Inicia Sesión </h2>
                     </div>
 
