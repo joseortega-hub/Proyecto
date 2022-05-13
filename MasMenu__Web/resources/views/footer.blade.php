@@ -6,6 +6,7 @@
 
 
 <script>
+    /* Funcion simple que coge el año actual y lo guarda en el span mediante el id */
     var date = new Date();
     var texto = document.getElementById('anyo');
     texto.innerHTML = date.getFullYear();

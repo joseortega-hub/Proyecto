@@ -24,6 +24,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    /*
+        Este metodo lo que hace es coger todos los restaurantes de la base de datos ,
+        despues en un array mete las imagenes de este restaurante mediante su campo en la base de datos urlImg
+        y devuelve un array que contiene todos los restaurantes de la base de datos
+        y el array de imagenes comentado y envia a la vista principal de la pagina pra así al entrar aparezcan todos los restaurantes
+        creados y almacenados en la base de datos.
+     */
     public function index()
     {
         $ciudad = "";
@@ -45,6 +53,15 @@ class HomeController extends Controller
         return view('public/home', $info);
     }
 
+
+    /*
+funcion que recibe los valores de los dos inputs del buscador principal y segun estos valores mostrara
+-Los restaurantes que coincidas con el nombre
+-Los restaurantes que coincidan con la ciudad
+-Los restaurantes que coincidan con el nombre o ciudad
+-Ningun restaurante
+
+*/
 
     public function busqueda(Request $request)
     {
@@ -79,6 +96,12 @@ class HomeController extends Controller
         return view('public/buscar', $info);
     }
 
+
+    /*
+Este metodo te devuelve el restaurante , recibiendo su id al seleecionarlo y te puede reenviar a dos sitios
+-Si estas logueado te enviara a la pagina para editar tu restaurante
+-Si no estas logueado te enviara a la pagina basica del restaurante con todos sus datos
+    */
     public function restaurante(Request $request, $id)
 
     {

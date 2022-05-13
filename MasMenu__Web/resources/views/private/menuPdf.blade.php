@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
 
+<!--
+Mediante una libreria de laravel creamos un pdf de cualquier archivo y le damos formato como si fuera un html
+-->
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

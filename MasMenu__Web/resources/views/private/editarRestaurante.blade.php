@@ -1,28 +1,21 @@
 @extends('base')
-
 @section('titulo', $restaurante->nombre . ' editor')
-
 @section('cuerpo')
-
     <div class="container mt-3 pb-5">
-
         @include('public/slider')
         <div class="row m-0">
             <div class="col-12 p-0 mb-3">
-
                 <h1>
-
                     {{ $restaurante->nombre }}
+                    <!--
+                                    Icono de papelera que te redirige al metodo para eliminar el restaurante
+                                -->
                     <a href="{{ route('eliminar_restaurante', $restaurante->id) }}" class="btn btn-danger py-2 px-3">
                         <span class="icon-bin2"></span></a>
                 </h1>
-
                 <p>{{ $restaurante->ciudad }}, {{ $restaurante->region }}, {{ $restaurante->pais }}</p>
                 @include('private/galeria')
             </div>
-
-
-
             <div class="col-md-8 pr-md-3 px-0">
                 <div class="row m-0">
                     <!--Menus Disponibles-->
@@ -141,12 +134,7 @@
                 <!--MHorario-->
                 <div class="w-100  bg-white shadow-sm border p-3">
                     <h4 class="border-bottom pb-2 mb-2">Horario</h4>
-
-
                     @include('/private/horario')
-
-
-
                 </div>
             </div>
         </div>
@@ -168,6 +156,12 @@
 
 
     <script>
+        /*
+            Funcion de Ayax que elimina cada menu sin recragar la pagina
+            para ello redirige al metodo que elimina al menu de la base de datos y tambien elimina el div que contenia
+            al menu eliminandolo de forma visual y sin cargar
+
+            */
         function eliminarMenu(id) {
 
             const xhttp = new XMLHttpRequest();

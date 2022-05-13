@@ -24,6 +24,9 @@
                                  <div class="box text-center">
                                      <input type="file" name="archivo" id="file-7" required
                                          class="inputfile inputfile-5" accept="application/pdf, image/*" />
+                                     <!--
+                                            Con este label se pone el nombre del archivo que hemos seleccionado debajo de la imagen
+                                         -->
                                      <label for="file-7">
                                          <figure><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"
                                                  viewBox="0 0 20 17">

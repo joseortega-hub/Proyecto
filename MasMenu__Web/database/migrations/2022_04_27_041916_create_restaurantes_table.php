@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('restaurantes', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->timestamps(); //almacena un valor en la columna created_at y updated cuando se crea un registro o se actualiza
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users');
             $table->string('nombre');

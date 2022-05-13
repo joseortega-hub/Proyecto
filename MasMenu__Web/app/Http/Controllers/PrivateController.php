@@ -21,6 +21,11 @@ class PrivateController extends Controller
      * @return void
      */
 
+
+    /*
+El middleware proporciona un mecanismo conveniente para   filtrar las solicitudes HTTP.
+Yo aprovecho este que  verifica que el usuario esté autenticado
+     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -31,6 +36,13 @@ class PrivateController extends Controller
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
+     */
+
+
+    /*
+    Metodo que nos devuelve y muestra todos los restaurantes del usuario correspondiente
+    mediante su id
+
      */
     public function dashboard(Request $request)
     {
@@ -56,6 +68,11 @@ class PrivateController extends Controller
     }
 
 
+    /*
+Funcion que mediante los ids y las claves ajenas nos devuelve toda la informacion de un restaurante
+y sus tablas asociadas y nos las lleva a una pagina para editar esta informacion
+
+    */
     public function restaurante(Request $request, $id)
     {
         $restaurante = Restaurante::find($id);
@@ -74,6 +91,14 @@ class PrivateController extends Controller
 
         return view('private/editarRestaurante', $info);
     }
+    /*
+Funcion que es llamada por modal con un formulario para crear el restaurante
+recibe todos los datos por Post y crea una imagen con el urlImg =  al nombre del file
+seleccionado y también mueve esta imagen a la carpeta correspondiente.Como sabemos que
+cada restaurante tiene 5 imagenes, las 4 restantes las metemos mediante un for para
+mejorar la experiencia del usuario en la parte visual y creamos un horario por defecto
+
+    */
 
     public function crearRestaurante(Request $request)
     {
@@ -156,6 +181,10 @@ class PrivateController extends Controller
         return redirect()->back();
     }
 
+    /*
+Funcion que es llamada por un modal y que mediante la funcion save actualiza los valores en la base de datos
+
+    */
 
     public function editarPerfil(Request $request)
     {
@@ -169,7 +198,10 @@ class PrivateController extends Controller
         return redirect()->back();
     }
 
+    /*
+Funcion que es llamada por un modal y que mediante la funcion save actualiza los valores en la base de datos
 
+    */
 
     public function editarDatos(Request $request, $id)
     {
@@ -184,6 +216,10 @@ class PrivateController extends Controller
         return redirect()->back();
     }
 
+    /*
+Funcion que es llamada por un modal y que mediante la funcion save actualiza los valores en la base de datos
+
+    */
     public function editarDireccion(Request $request, $id)
     {
 
@@ -198,6 +234,10 @@ class PrivateController extends Controller
         return redirect()->back();
     }
 
+    /*
+Funcion que al igual que la imagen del restaurante recibe un archivo que es el menu seleccionaod y lo mueve a la parte de Pdf
+
+    */
     public function crearMenu(Request $request, $id)
     {
 
@@ -235,7 +275,10 @@ class PrivateController extends Controller
         return redirect()->back();
     }
 
+    /*
+Funcion que elimina un restaurante y todas las filas de las tablas que estaban relacionadas a este por la clave ajena
 
+    */
     public function eliminarRestaurante(Request $request, $id)
     {
         $restaurante = Restaurante::find($id);
@@ -321,6 +364,11 @@ class PrivateController extends Controller
         return redirect()->back();
     }
 
+
+    /*
+
+Funcion que crea el pdf 
+    */
     public function imprimir(Request $request, $id)
     {
         $restaurante = Restaurante::find($id);

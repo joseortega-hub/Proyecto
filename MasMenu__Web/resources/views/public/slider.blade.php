@@ -3,8 +3,7 @@
         <div class="modal-content p-0 p-md-4">
             <!-- Slideshow container -->
             <div class="slideshow-container">
-
-                <!-- Full-width images with number and caption text -->
+                <!-- Cada imagen que va a mostrar el slider-->
                 <div class="mySlides ">
                     <img src="/img/restaurante/{{ $imagenes[0]->urlImg }}" style="width:100%">
                 </div>
@@ -25,13 +24,12 @@
                     <img src="/img/restaurante/{{ $imagenes[4]->urlImg }}" style="width:100%">
                 </div>
 
-                <!-- Next and previous buttons -->
+                <!-- flechas para siguiente y atras -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
             <br>
-
-            <!-- The dots/circles -->
+            <!-- Circulos para ir cambiando de imagenes -->
             <div class="text-center my-3">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>

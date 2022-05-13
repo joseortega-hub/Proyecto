@@ -1,4 +1,4 @@
-/* inicio */
+/* inicio y funciones usadas por todo el programa*/
 * {
     font-family: 'Raleway', sans-serif;
 }
@@ -139,12 +139,7 @@ COOKIES
     }
 }
 
-/*
-.btn-primary, .bg-primary {
-    background-color: #FF385C !important;
-    border-color: #FF385C;
-}
-*/
+
 
 .textoInicio {
     font-size: 35px;

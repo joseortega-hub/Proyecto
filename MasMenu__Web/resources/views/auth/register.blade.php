@@ -5,8 +5,6 @@
 @section('cuerpo')
     <div class="row m-0 bg-white">
         <div class="col-md-4 offset-md-4 p-md-5 p-3">
-
-
             <form method="POST" action="{{ route('register') }}" id="registration">
                 @csrf
                 <div class="row m-0">
@@ -16,6 +14,10 @@
                     </div>
 
                     <div class="col-12 p-0">
+                        <!--
+                            Validaciones que hace el propio laravel en backeng y que mostrara un mensaje de error
+                            en caso que los datos sean incorrectos
+                        -->
                         @error('email')
                             <div class="alert alert-danger" role="alert">
                                 Email no valido
@@ -68,6 +70,10 @@
     </div>
 
     <script>
+        /*
+        Funcion Js que comprueba que la contraseña tenga mas de 5 digitos
+        y que muestra un mensjae de error en un label hasta que este bien
+        */
         function validacionPassword() {
             password = document.getElementById('password').value;
 
@@ -91,6 +97,9 @@
             }
         }
 
+        /*
+        Funcion Js que mediante una expresion regular se asegura que el email sea correcto
+        */
         function validacionEmail() {
             email = document.getElementById('email').value;
             console.log(email)

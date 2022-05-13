@@ -1,12 +1,8 @@
 @extends('base')
-
 @section('titulo', 'Login de usuario')
-
 @section('cuerpo')
     <div class="row m-0 bg-white">
         <div class="col-md-4 offset-md-4 p-md-5 p-3">
-
-
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="row m-0">

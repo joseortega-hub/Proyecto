@@ -1,3 +1,10 @@
+/*
+Este condicional no te permite moverte
+por la pagina hasta que aceptes las cookies y te po e
+el fondo en gris y resalta el div en el cual esta el mensaje
+
+*/
+
 if (localStorage.cookieMasMenu > 0) {
     document.getElementById('cookie1').style.display = 'none';
     $('html').css('overflow-y', 'scroll');
@@ -6,6 +13,10 @@ if (localStorage.cookieMasMenu > 0) {
     document.getElementById('cookie1').style.display = 'block';
 }
 
+
+//Funcion que guarda en el navegador que aceptes las cookies
+//que ya las has aceptado y no te vuelve a salir el mensaje
+//es llamada por el onclick del boton de aceptar
 function controlcookies() {
     localStorage.cookieMasMenu = (localStorage.cookieMasMenu || 0);
     localStorage.cookieMasMenu++;
@@ -16,8 +27,9 @@ function controlcookies() {
 
 
 /*
-    By Osvaldas Valutis, www.osvaldas.info
-    Available for use under the MIT License
+    Funcion que cuando creas un menu
+    te previsualiza el nombre del archivo que has seleccionado
+    y te hace focus en la imagen que esta puesta como label file
 */
 
 'use strict';
@@ -46,6 +58,14 @@ function controlcookies() {
         input.addEventListener('blur', function () { input.classList.remove('has-focus'); });
     });
 }(document, window, 0));
+
+
+
+
+
+
+
+
 
 
 /*función que lee la url de un input type file y la coloca

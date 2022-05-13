@@ -21,7 +21,11 @@
 
 <body class="mb-5">
 
+    <!---
 
+        Div que aparecepara aceptar los terminos y condiciones.Llamara a un js que guardare los valores en el
+        localStorage para no volver a aparecer
+    -->
     <div class="overlayCookie" id="cookie1">
         <div class="cookiesms shadow-lg">
             <h5>Ley de Cookies Europea</h5>
@@ -41,11 +45,16 @@
 
 
     <nav class="navegador p-3 p-md-4 w-100">
+        <!--
+            Enlace con el nombre de la pagina que redirigira a la pagina principal
+             -->
         <div class="logoNav float-left text-dark font-weight-bold"><a href="{{ route('home') }}"
                 class="enlace">MasMenu</a> </div>
 
         <div class="elementosNav float-right">
-            <!-- elementos publicos -->
+            <!-- elementos publicos, comprueba si el usuario esta registrado mediante la funcion Auth::guest que
+                ofrece laravel , para de estar formas ofrecer unas opciones o otras
+         -->
             @if (Auth::guest())
                 <a type="button" href="{{ route('register') }}"
                     class="btn btn btn-outline-primary rounded activeSingup">Singup</a>
@@ -59,6 +68,10 @@
                     <span class="icon-user"></span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                    <!--
+                    Div desplegable con las dos opciones de un usuario registrado
+                    -->
                     <a data-toggle="modal" data-target="#editarPerfil" class="dropdown-item" href="#">Perfil</a>
                     <div class="px-4 py-2">
                         <hr class="m-0">
@@ -71,24 +84,18 @@
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <!--
+                                La funcion csrf realiza unas validaciones y ofrece una seguridad a los formularios y es obligatoria
+                               -->
                         @csrf
                     </form>
                 </div>
-
                 @include('private/perfil')
             @endif
-
-
-
         </div>
     </nav>
-
-
     @yield('cuerpo')
-
     @include('footer')
-
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -99,7 +106,6 @@
     <script src="/js/main.js"></script>
     <script src="/js/slider.js"></script>
     <script src="/js/qrcodejs/qrcode.js"></script>
-
     @yield('js')
 </body>
 

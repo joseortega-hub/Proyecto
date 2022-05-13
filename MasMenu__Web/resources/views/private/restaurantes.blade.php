@@ -5,9 +5,6 @@
 @section('cuerpo')
 
     <!-- buscador -->
-
-
-
     <div class="row mx-0">
         <div class="col-md-8 offset-md-2 pb-md-5 p-md-0 px-0 mt-3">
             <div class="px-3">
@@ -15,7 +12,10 @@
             </div>
 
             <div class="row m-0 ">
-
+                <!--
+                                Bucle que recibe los restaurantes correspondientes al usuario que hay registrado
+                                esto lo hace mediante un metodo
+                            -->
                 @if ($restaurantes)
                     @foreach ($restaurantes as $restaurante)
                         @include('public/restauranteBusqueda')
@@ -24,6 +24,9 @@
 
 
                 <div class="col-md-4 p-3 ">
+                    <!--
+                                Div que te redirige al pulsarlo a un modal para crear tu restaurante
+                            -->
                     <div data-toggle="modal" data-target="#nuevoRestaurante"
                         class="shadowHover shadow-sm border bg-white divBusqueda position-relative" style="height: 296px">
                         <p class="text-center anadirRestaurante">
@@ -34,7 +37,7 @@
                     </div>
 
 
-                    <!-- Modal -->
+                    <!-- Modal para crear tu restaurante -->
                     <div class="modal fade" id="nuevoRestaurante" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content p-md-5 p-4">
@@ -75,6 +78,9 @@
                                             <input type="text" name="direccion" id="" placeholder="Dirección"
                                                 class="form-control ">
                                         </div>
+                                        <!--
+                                                    Con esto aseguramos que como minimo tenga una imagen cada restaurante creado
+                                                -->
                                         <div class="col-12 mb-3 p-0">
                                             Imagen
                                             <input type="file" name="imagen" id="" placeholder="Imagen" value=""
@@ -95,20 +101,6 @@
                 </div>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
     </div>

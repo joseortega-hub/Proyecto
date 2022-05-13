@@ -30,7 +30,9 @@ $('#paso4, #paso4_2, #paso4_3').click(function () {
 
 
 /*
-lunes
+lunes, funcion que va cambiando los estilos a los inputs y su visibilidad mediante clases
+ (añadiendolas y eliminandolas ) y teniendo en cuenta sus valores cheked que estara puesto por defecto
+o cuando se haga click en los unputs correspondientes
 */
 if ($('#no_lunes').is(':checked')) {
     $('.lunes').addClass('active');

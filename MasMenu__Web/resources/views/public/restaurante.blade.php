@@ -1,12 +1,15 @@
 @extends('base')
-
 @section('titulo', $restaurante->nombre)
-
 @section('cuerpo')
     <div class="container mt-3 pb-5">
+        <!--
+                        Slider para las imagenes
+                    -->
         @include('public/slider')
         <div class="row m-0 ">
-            <!--Contenedor imagenes-->
+            <!--
+                            Contenedor imagenes
+                        -->
             <div class="col-12 p-0 mb-3 contImg">
 
                 <h1>{{ $restaurante->nombre }}</h1>
@@ -62,6 +65,9 @@
                     <!--Menus Disponibles-->
                     <div class="col-12  bg-white shadow-sm border p-3 mb-3">
                         <h4 class="border-bottom pb-2 mb-2">Menús disponibles</h4>
+                        <!--
+                                        Recibe  un array con todos los menus del restaurante correspondiente y lo recorre
+                                    -->
                         @foreach ($menus as $menu)
                             <div class="col-12 py-0 px-md-2 p-0 bg-light mt-3 shadowHover"
                                 style="border-radius: 50px; height: 58px ">
@@ -72,9 +78,13 @@
                                     </div>
                                 </a>
                                 <div class="iconosMenuBuscador float-left">
+                                    <!--
+                                                    Enlace que llama al modal , el cual tiene que ser unico es decr con un id diferente y debe tener el mismo id
+                                                    que el enlace que le llama
+                                                -->
                                     <a data-toggle="modal" data-target="#qrCode_{{ $menu->id }}"
-                                        class="btn bg-dark text-center ml-1 text-light" style="padding: 12px 0"><span
-                                            class="icon-qrcode"></span>
+                                        class="btn bg-dark text-center ml-1 text-light" style="padding: 12px 0">
+                                        <span class="icon-qrcode"></span>
                                     </a>
                                     <a class="btn bg-primary  text-center ml-1 text-light"
                                         href="/PDF/{{ $menu->urlArchivo }}" target="_blank" style="padding: 12px 0">
@@ -86,7 +96,9 @@
                                     aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content p-5" id="content_{{ $menu->id }}">
-
+                                            <!--
+                                                        Este codigo Qr que ira aqui dentro se crea mediante js
+                                                    -->
                                         </div>
                                     </div>
                                 </div>
@@ -127,6 +139,9 @@
                 <div class="w-100  bg-white shadow-sm border p-3">
                     <h4 class="border-bottom pb-2 mb-2">Horario</h4>
                     <p class="mb-1 "> <small class="text-secondary">Lunes:</small>
+                        <!--
+                                   Por cada dia de la semana hay que comprobar si esta abierto o cerrado y los turnos que tiene
+                                -->
                         @if ($horario->lunes_abierto == 0)
                             <span class="text-danger">cerrado</span>
                         @else
@@ -220,6 +235,11 @@
 
 
 @section('js')
+    <!--
+        Script que se encarga de crear un codigo QR para cada menu utilizando una libreria js y
+        guardandolo en el modal correspondiente que se sabe mediante el id
+        -->
+
     <script type="text/javascript">
         @foreach ($menus as $menu)
             new QRCode(document.getElementById("content_" + {{ $menu->id }}),

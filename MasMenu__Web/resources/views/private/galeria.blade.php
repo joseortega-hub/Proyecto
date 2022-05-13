@@ -8,7 +8,9 @@
                     style="background:url('/img/restaurante/{{ $imagenes[0]->urlImg }}') no-repeat; background-size: cover; background-position: center !important;">
                 </div>
 
-
+                <!--
+                    Imagen de una camara para seleccionar la imagen que queremos guardar
+                -->
                 <label class="inputCambiarFondo">
                     <input type="file" name="archivo" required accept="image/*" class="clearablefileinput shadowHover"
                         id="id_imagen1">
@@ -16,7 +18,9 @@
                         <span class="icon-camera"></span>
                     </a>
                 </label>
-
+                <!--
+                    Boton que confirma y guarda la imagen seleccionada
+                -->
                 <button id="btnImg1" class="btn btn-primary botonNuevaImagen shadow py-2 px-3" type="submit">
                     Guardar
                 </button>

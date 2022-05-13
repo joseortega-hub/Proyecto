@@ -1,16 +1,21 @@
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// Funcion al pulsar las flechas que te mueve ala siguiente imagen
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+
+
+// TFuncion que al pulsar los circulos te pasa a la imagen que pulses
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
+
+//Funcion que esconde las demas imagenes y muestra sola la actual
+//con las flechas y circulos para moverse
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
